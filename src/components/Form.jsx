@@ -12,56 +12,6 @@ import { storage, textDB } from '../firebase-config'
 
 
 const Form = ({loading, setFile, handleupload, setTitle, setDesc, setLink, onSave}) => {
-//   const navigate = useNavigate()
-
-//   const [title,setTitle]=useState();
-//   const [desc,setDesc]=useState();
-//   const [link,setLink]=useState();
-//   const [file,setFile]=useState();
-//   const [loading,setLoading]=useState(false);
-//   const [data, setData] = useState([])
-
-//   const postId=Date.now().toString();
-
-
-// const handleupload = (e) => {
-//   // console.log(e.target.files[0])
-//         const imgs = ref(storage, `image/${v4()}`)
-//         uploadBytes(imgs, e.target.files[0]).then(data => {
-//             // console.log(data, 'imgs')
-//             getDownloadURL(data.ref).then(val => {
-//               setFile(val)
-//             })
-//         })
-// }
-
-// const handleClick = async () => {
-//   const valRef = collection(textDB, "txtData" )
-//   await addDoc(valRef, {txtVal: title, txtDesc: desc, txtLink: link, imgUrl: file})
-//   alert('data added')
-// }
-
-
-// const onSave = () => {
-//       setLoading(true)
-//       handleClick();
-//       navigate('/home')
-//    }
-
-
-//    const getData = async () => {
-//     const valRef = collection(textDB, "txtData" )
-//     const dataDB = await getDocs(valRef)
-//     // const allData = dataDB.docs.map(val => console.log(val, 'values'))
-//     const allData = dataDB.docs.map(val => ({...val.data(), id: val.id}))
-//     setData(allData)
-//     // console.log(dataDB)
-//   }
-
-//   useEffect(() => {
-//     getData()
-//   }, [])
-
 
 
   return (
@@ -114,46 +64,3 @@ const Form = ({loading, setFile, handleupload, setTitle, setDesc, setLink, onSav
 export default Form
 
 
-// const onSave = () => {
-  //   console.log('title:',title,'desc:', desc, 'link:',link )
-  //   console.log('file:',file )
-  //   uploadFile()
-  // }
-
-//   const onSave=()=>{
-//     setLoading(true)
-//     uploadFile();
-//     navigate('/home')
-
-//  }
-
-  // const uploadFile = () => {
-  //   const storageRef = ref(storage, 'pinterest/'+file.name)
-  //   uploadBytes(storageRef, file).then((snapshot) => {
-  //     console.log('file uploaded')
-  //   }).then(resp=>{
-  //     getDownloadURL(storageRef).then(async(url)=>{
-  //         console.log("DownloadUrl",url);
-  //         const postData={
-  //             title:title,
-  //             desc:desc,
-  //             link:link,
-  //             image:url,
-  //             userName:session.user.name,
-  //             email:session.user.email,
-  //             userImage:session.user.image,
-  //             id:postId
-  //         }
-
-      
-  //     await setDoc(doc(db,'pinterest-post',postId),
-  //     postData).then(resp=>{
-  //         console.log("Saved")
-  //         setLoading(true);
-  //         router.push("/"+session.user.email)
-  //     })
-
-
-  //     })
-  //   })
-  // }

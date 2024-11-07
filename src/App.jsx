@@ -6,23 +6,20 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Chat from './components/Chat'
 import Signup from './pages/Signup'
 import Login from './components/Login'
-import Same from './components/Same'
+// import Same from './components/Same'
 import Navbar from './components/Navbar'
 import { useNavigate } from 'react-router';
 import { addDoc, collection, getDocs, serverTimestamp } from 'firebase/firestore'
 import { storage, textDB, msgDB } from './firebase-config'
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid'
-
-
 import Cookies from "universal-cookie";
+
+
 const cookies = new Cookies()
 
 function App() {
-
-
   // const navigate = useNavigate()
-
   const [title,setTitle] = useState();
   const [desc,setDesc] = useState();
   const [link,setLink] = useState();
@@ -101,12 +98,11 @@ const onSave = () => {
   if(!isAuth) {
     return (
         <>
-        <Login setIsAuth={setIsAuth} />
+        <Login />
         </>
     )
   }
 
-  // const handle = !isAuth ? (<Login setIsAuth={setIsAuth} handle={handle} />) : (<Home />)
 
   return (
     <BrowserRouter>
@@ -116,9 +112,8 @@ const onSave = () => {
       <Route path='/home' element={<Home room={room} setRoom={setRoom} data={data} getData={getData} />} />
       <Route path='/signup' />
       <Route path='pinbuilder' element={ <PinBuilder loading={loading} setFile={setFile} handleupload={handleupload} setTitle={setTitle} setDesc={setDesc} setLink={setLink} onSave={onSave} />} />
-      {/* <Route path='product'> */}
         <Route path='/product/:chatId' element={<Chat data={data} getData={getData} handleSubmit={handleSubmit} setNewMessage={setNewMessage}/>}/>
-      {/* </Route> */}
+     
     </Routes>
     </BrowserRouter>
   )

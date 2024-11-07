@@ -8,15 +8,13 @@ const cookies = new Cookies()
 
  
 const Login = ({handle,setIsAuth }) => {
-    // const {setIsAuth} = props
-
-    const navigate = useNavigate()
    
     const signInWithGoogle = async () => {
         try {
             const result =  await signInWithPopup(auth, provider)
             cookies.set("auth-token", result.user.refreshToken)
-            setIsAuth(true)
+            // setIsAuth(true)
+            // navigate('/home')
         }catch (err) {
            console.error(err) 
         }
@@ -28,10 +26,15 @@ const Login = ({handle,setIsAuth }) => {
             <div className='flex flex-col justify-center items-center font-bold shadow-lg text-white bg-[grey]/30 w-full min-h-screen'>                                                                                                
                     <section className='bg-white text-center py-8 px-14 rounded-md'>
                     <p className='py-6 text-black'>Sign In With Google To Continue</p>
-                    <button 
+                    {/* <button 
                         className='bg-[#3b5998] px-8 py-3 rounded-md'
                         onClick={signInWithGoogle}
-                        >Sign In With Google</button>
+                        >Sign In With Google</button> */}
+                    <button 
+                        className='bg-[#3b5998] px-8 py-3 rounded-md'
+                        >
+                            <Link to='/home'>Sign In With Google</Link>
+                        </button>
                     </section>                                
                 </div>
             </main>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Form from './Form'
 import img from '../assets/img.png'
-// import {data} from '../data';
 import { Link, useParams } from 'react-router-dom';
 
 
@@ -9,8 +8,7 @@ import { Link, useParams } from 'react-router-dom';
 const Chat = ({data, getData, handleSubmit, setNewMessage}) => {
  
   const {chatId} = useParams()
-  // const items = data.find((item) => item.id === chatId)
-  // const {imgUrl, txtVal} = items
+  
   
   
   return (
@@ -35,7 +33,7 @@ const Chat = ({data, getData, handleSubmit, setNewMessage}) => {
             height={800}
             className='object-contain h-[100%] w-full'
             />
-                {/* <h2>{item.txtVal}</h2> */}
+               
               </div>
             ))}
            
@@ -74,11 +72,15 @@ const Chat = ({data, getData, handleSubmit, setNewMessage}) => {
     </div>
     <div></div>
     <form action=""  onClick={handleSubmit}>
-        <input type="text"
+        <textarea
+         name="" 
+         id="" 
+         cols="9" 
+         rows="13"
           placeholder='start your conversation here....' 
         className='h outline-none  w-full mt-8 py-4 pl-2 text-[14px] border-b-[2px] border-gray-400 placeholder-gray-400 resize-none h-[100%]'
           onChange={(e) => setNewMessage(e.target.value)}
-        />
+        ></textarea>
         <button className=''>send</button>
         </form>
           {/* <input type="text"

@@ -5,9 +5,7 @@ import {  createUserWithEmailAndPassword  } from 'firebase/auth';
  
 const Signup = () => {
    
-   
-    
- 
+
   return (
     <main className='w-full min-h-screen bg-cover bg-center flex justify-center items-center rounded-2xl relative shadow-lg bg-opacity-200  here' >        
                 <div className='flex flex-col justify-center items-center font-bold shadow-lg text-white bg-[grey]/30 w-full min-h-screen '>                  
